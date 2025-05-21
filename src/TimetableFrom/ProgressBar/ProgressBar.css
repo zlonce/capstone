@@ -20,12 +20,12 @@
 }
 
 .progress-step-active {
-  color: #1e40af;
+  color: #004098;
   font-weight: 500;
 }
 
 .progress-step-completed {
-  color: #2563eb;
+  color: #004098;
 }
 
 .progress-step-circle {
@@ -43,13 +43,13 @@
 }
 
 .progress-step-circle-active {
-  background-color: #2563eb;
+  background-color: #004098;
   color: white;
 }
 
 .progress-step-circle-completed {
   background-color: #dbeafe;
-  border: 2px solid #2563eb;
+  border: 2px solid #004098;
 }
 
 .progress-bar {
@@ -64,7 +64,7 @@
   top: 0;
   left: 0;
   height: 0.5rem;
-  background-color: #2563eb;
+  background-color: #004098;
   border-radius: 9999px;
   transition: width 0.3s ease-out;
 }
@@ -83,12 +83,12 @@
 }
 
 .progress-title-active {
-  color: #1e40af;
+  color: #004098;
   font-weight: 500;
 }
 
 .progress-title-completed {
-  color: #2563eb;
+  color: #004098;
 }
 
 .text-align-left {

@@ -29,7 +29,7 @@
 .area-button-selected {
   background-color: #ebf5ff;
   border-color: #93c5fd;
-  color: #1d4ed8;
+  color: #004098;
 }
 
 .area-button-unselected {
@@ -53,8 +53,8 @@
 }
 
 .checkbox-selected {
-  background-color: #2563eb;
-  border-color: #2563eb;
+  background-color: #004098;
+  border-color: #004098;
 }
 
 .checkbox-unselected {
