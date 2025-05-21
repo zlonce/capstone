@@ -71,13 +71,10 @@ const Step2Department = ({
 
       {/* 학과 선택기 직접 통합 */}
       <div className="step-section">
-        <label className="step-label">
-          학과 ({getCurrentDepartmentLabel()})
-        </label>
 
         <div className="department-container">
           {step === 0 ? (
-            <div className="department-section">
+            <div>
               <h3 className="department-section-title">단과대학 선택</h3>
               <div className="college-list">
                 {collegesAndDepartments.map((college) => (
@@ -101,10 +98,10 @@ const Step2Department = ({
                     </svg>
                   </button>
                 ))}
-              </div>
-            </div>
+             </div>
+             </div>
           ) : (
-            <div className="department-section">
+            <div>
               <button
                 type="button"
                 className="back-button"
