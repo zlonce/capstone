@@ -17,6 +17,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  max-height: 15rem;
+  overflow-y: auto;
 }
 
 .college-button {

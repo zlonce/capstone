@@ -12,17 +12,6 @@ const Step2Department = ({
   const [selectedCollege, setSelectedCollege] = useState(null);
   const [step, setStep] = useState(0);
 
-  // 현재 선택된 학과 정보 가져오기
-  const getCurrentDepartmentLabel = () => {
-    for (const college of collegesAndDepartments) {
-      const dept = college.departments.find(
-        (d) => d.value === formData.department
-      );
-      if (dept) return dept.label;
-    }
-    return "학과 선택";
-  };
-
   // 현재 선택된 학과의 단과대학 찾기
   useEffect(() => {
     if (formData.department) {
@@ -71,7 +60,6 @@ const Step2Department = ({
 
       {/* 학과 선택기 직접 통합 */}
       <div className="step-section">
-
         <div className="department-container">
           {step === 0 ? (
             <div>
@@ -98,8 +86,8 @@ const Step2Department = ({
                     </svg>
                   </button>
                 ))}
-             </div>
-             </div>
+              </div>
+            </div>
           ) : (
             <div>
               <button
