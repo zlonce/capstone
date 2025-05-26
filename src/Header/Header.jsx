@@ -1,11 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { runIntro } from "../Tutorial/RunIntro";
+import { formSteps } from "../Tutorial/TutorialStep";
+import { DUMMY_RESULT_DATA } from "../TimetableResult/Tutorial_Dummy";
 import "./Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const closeTimeoutRef = useRef(null);
+  const navigate = useNavigate();
+
+  const startTutorial = () => {
+    setIsMenuOpen(false);
+    navigate("/");
+    runIntro(formSteps, {
+      onComplete: () => {
+        navigate("/result", {
+          state: {
+            tutorialMode: true,
+            serverResponse: DUMMY_RESULT_DATA,
+          },
+        });
+      },
+      onExit: () => {},
+    });
+  };
 
   const toggleMenu = () => {
     if (isMenuOpen) {
@@ -80,7 +100,9 @@ const Header = () => {
           </button>
 
           <nav className="desktop-nav">
-            <button className="nav-button">설명</button>
+            <button className="nav-button" onClick={startTutorial}>
+              설명
+            </button>
             <Link to="/contact" className="nav-button">
               문의하기
             </Link>
@@ -116,7 +138,9 @@ const Header = () => {
 
               <nav className="mobile-nav">
                 <div className="mobile-nav-buttons">
-                  <button className="mobile-nav-button">설명</button>
+                  <button className="mobile-nav-button" onClick={startTutorial}>
+                    설명
+                  </button>
                   <Link
                     to="/contact"
                     className="mobile-nav-button"

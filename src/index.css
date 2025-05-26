@@ -131,3 +131,8 @@ select {
 .border-l-4.border-kmu-blue:hover {
   transform: translateX(4px);
 }
+
+/*튜토리얼 버튼 색상*/
+.introjs-nextbutton {
+  background-color: var(--kmu-blue) !important;
+}

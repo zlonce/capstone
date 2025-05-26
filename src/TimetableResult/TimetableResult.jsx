@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { runIntro } from "../Tutorial/RunIntro";
+import { resultSteps } from "../Tutorial/TutorialStep";
 import "./TimetableResult.css";
 import axios from "axios";
 
@@ -143,8 +145,22 @@ const transformServerData = (serverResponse) => {
 
 const TimetableResult = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const formData = location.state || {};
   const { serverResponse } = formData;
+
+  useEffect(() => {
+    if (location.state?.tutorialMode) {
+      runIntro(resultSteps, {
+        onComplete: () => {
+          navigate("/");
+        },
+        onExit: () => {
+          navigate("/");
+        },
+      });
+    }
+  }, []);
 
   const [schedule, setSchedule] = useState([]);
   const [remoteClasses, setRemoteClasses] = useState([]);
