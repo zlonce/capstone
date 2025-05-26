@@ -18,7 +18,6 @@ export const formSteps = [
 
 export const resultSteps = [
   {
-    element: ".timetable",
     intro: "모든 단계가 끝나면 <br>추천된 시간표가 이렇게 표시돼요!",
   },
   {
