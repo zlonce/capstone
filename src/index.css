@@ -139,3 +139,7 @@ select {
   box-shadow: none !important;
   text-shadow: none !important;
 }
+
+.introjs-tooltipReferenceLayer {
+  visibility: visible !important;
+}

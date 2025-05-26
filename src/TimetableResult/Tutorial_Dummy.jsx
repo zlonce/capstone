@@ -9,8 +9,8 @@ export const DUMMY_RESULT_DATA = {
           code: "20923-01",
           credit: 3,
           time_json: [
-            { day: "월", start: "09:00", end: "10:15", room: "IT101" },
-            { day: "수", start: "09:00", end: "10:15", room: "IT101" },
+            { day: "월", start: "09:00", end: "14:15", room: "4107" },
+            { day: "수", start: "09:00", end: "10:15", room: "4107" },
           ],
         },
         {
@@ -19,8 +19,8 @@ export const DUMMY_RESULT_DATA = {
           code: "21598-02",
           credit: 3,
           time_json: [
-            { day: "화", start: "13:30", end: "14:45", room: "IT202" },
-            { day: "목", start: "13:30", end: "14:45", room: "IT202" },
+            { day: "화", start: "13:30", end: "14:45", room: "1402" },
+            { day: "목", start: "13:30", end: "14:45", room: "1402" },
           ],
         },
         {
@@ -29,7 +29,7 @@ export const DUMMY_RESULT_DATA = {
           code: "17735-01",
           credit: 3,
           time_json: [
-            { day: "금", start: "10:30", end: "11:45", room: "IT303" },
+            { day: "금", start: "10:30", end: "11:45", room: "1302" },
           ],
         },
       ],
@@ -48,8 +48,8 @@ export const DUMMY_RESULT_DATA = {
         professor: "이인규",
         credit: 3,
         time_json: [
-          { day: "월", start: "10:30", end: "11:45", room: "IT102" },
-          { day: "수", start: "10:30", end: "11:45", room: "IT102" },
+          { day: "월", start: "10:30", end: "11:45", room: "1201" },
+          { day: "수", start: "10:30", end: "11:45", room: "1201" },
         ],
       },
     ],
