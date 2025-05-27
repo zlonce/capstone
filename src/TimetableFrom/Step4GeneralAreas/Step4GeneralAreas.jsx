@@ -77,6 +77,10 @@ const Step4GeneralAreas = ({
       alert("교양 학점을 선택했다면 최소 1개 이상의 교양 영역을 선택해주세요.");
       return;
     }
+    if (formData.generalAreas.includes("remote")) {
+      alert("원격으로 듣고 싶은 교양 분야를 선택해주세요.");
+      return;
+    }
 
     handleSubmit();
   };
