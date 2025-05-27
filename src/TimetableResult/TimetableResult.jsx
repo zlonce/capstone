@@ -10,14 +10,14 @@ const API_URL = "https://kmutime.duckdns.org/api/timetable";
 
 // 색상 배열을 전역으로 정의
 const COLORS = [
-  "#4C51BF",
-  "#38B2AC",
-  "#ED8936",
-  "#48BB78",
-  "#9F7AEA",
-  "#F56565",
-  "#667EEA",
-  "#D69E2E",
+  "#727497",
+  "#83b6b3",
+  "#e1a473",
+  "#8dc7a5",
+  "#b09adc",
+  "#df8d8d",
+  "#808ece",
+  "#d8bf8d",
 ];
 
 // 시간을 교시로 변환하는 함수
