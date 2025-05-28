@@ -810,6 +810,9 @@ const TimetableResult = () => {
             ) : (
               <p className="dummy-data-info">서버 응답이 없습니다.</p>
             )}
+            <p className="ex">
+              강의를 누르면 대체 강의를 선택할 수 있습니다.
+            </p>
           </div>
         </div>
 
@@ -857,6 +860,7 @@ const TimetableResult = () => {
                   })}
                 </tr>
               ))}
+              
             </tbody>
           </table>
         </div>
