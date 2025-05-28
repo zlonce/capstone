@@ -811,7 +811,7 @@ const TimetableResult = () => {
               <p className="dummy-data-info">서버 응답이 없습니다.</p>
             )}
             <p className="ex">
-              강의를 선택하하면 대체 강의를 선택할 수 있습니다.
+              강의를 선택하면 대체 강의를 선택할 수 있습니다.
             </p>
           </div>
         </div>
@@ -834,33 +834,48 @@ const TimetableResult = () => {
                   <td className="period-cell">{time}</td>
                   {days.map((day) => {
                     const cls = findClass(day, period);
-                    const isStart = cls?.startPeriod === period;
 
-                    // 이전 교시에서 시작한 수업이 여기까지 이어지는 경우 렌더링하지 않음
-                    if (!shouldRenderEmpty(day, period) && !isStart) {
+                    // 강의가 없으면 빈 칸 렌더링
+                    if (!cls) {
                       return (
                         <td
                           key={`${day}-${period}`}
-                          className="class-cell occupied"
+                          className="class-cell"
                         ></td>
                       );
                     }
 
+                    // 현재 셀이 강의 시작 교시가 아니면 렌더링하지 않고 null 반환 (병합 효과)
+                    if (cls.startPeriod !== period) {
+                      return null;
+                    }
+
+                    // 강의 시작 셀: rowspan 계산
+                    const rowSpan = cls.endPeriod - cls.startPeriod + 1;
+
                     return (
                       <td
                         key={`${day}-${period}`}
-                        className={`class-cell ${cls ? "has-class" : ""}`}
+                        rowSpan={rowSpan}
+                        className="class-cell has-class"
                         style={{
-                          padding: cls ? "0" : undefined,
+                          padding: 0,
+                          backgroundColor: `${cls.color}15`,
+                          borderLeft: `2px solid ${cls.color}`,
+                          cursor: "pointer",
                         }}
+                        onClick={() => handleClassClick(cls)}
                       >
-                        {renderClassCell(cls, isStart)}
+                        <div className="class-content">
+                          <div className="class-name">{cls.name}</div>
+                          <div className="class-professor">{cls.professor}</div>
+                          <div className="class-location">{cls.location}</div>
+                        </div>
                       </td>
                     );
                   })}
                 </tr>
               ))}
-              
             </tbody>
           </table>
         </div>
