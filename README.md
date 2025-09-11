@@ -6,7 +6,7 @@
 
 ## 사용해 보기
 
-https://kmutimetable.vercel.app/
+https://capstone-ochre-five.vercel.app/
 
 
 
